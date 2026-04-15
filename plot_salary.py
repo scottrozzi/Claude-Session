@@ -13,8 +13,8 @@ ax.hist(df["salary"], bins=15, color="steelblue", edgecolor="white", alpha=0.85)
 ax.axvline(mean_salary, color="red", linewidth=2, label=f"Mean: ${mean_salary:,.0f}")
 ax.axvline(median_salary, color="blue", linewidth=2, linestyle="--", label=f"Median: ${median_salary:,.0f}")
 
-ax.text(mean_salary + 1500, ax.get_ylim()[1] * 0.92, f"Mean\n${mean_salary:,.0f}", color="red", fontsize=10, va="top")
-ax.text(median_salary + 1500, ax.get_ylim()[1] * 0.80, f"Median\n${median_salary:,.0f}", color="blue", fontsize=10, va="top")
+ax.text(mean_salary + 1500, 0.95, f"Mean\n${mean_salary:,.0f}", color="red", fontsize=10, va="top", transform=ax.get_xaxis_transform())
+ax.text(median_salary + 1500, 0.82, f"Median\n${median_salary:,.0f}", color="blue", fontsize=10, va="top", transform=ax.get_xaxis_transform())
 
 ax.set_xlabel("Salary ($)", fontsize=12)
 ax.set_ylabel("Number of Employees", fontsize=12)
