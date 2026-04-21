@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Technologies — Workforce Health · Board Slides · April 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+    padding: 40px 24px;
+  }
+
+  .deck-header {
+    max-width: 1100px;
+    margin: 0 auto 48px;
+    border-bottom: 1px solid #2a2d3a;
+    padding-bottom: 24px;
+  }
+  .deck-header .company { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #6b7280; margin-bottom: 8px; }
+  .deck-header h1 { font-size: 22px; font-weight: 600; color: #f0f2f8; }
+  .deck-header .meta { font-size: 12px; color: #6b7280; margin-top: 6px; }
+
+  .slide {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+    background: #16181f;
+    border: 1px solid #2a2d3a;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .slide-header {
+    padding: 28px 36px 20px;
+    border-bottom: 1px solid #2a2d3a;
+  }
+  .slide-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .label-green  { color: #34d399; }
+  .label-amber  { color: #fbbf24; }
+  .label-blue   { color: #60a5fa; }
+
+  .slide-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f0f2f8;
+    margin-bottom: 6px;
+  }
+  .slide-subtitle {
+    font-size: 13px;
+    color: #9ca3af;
+    line-height: 1.5;
+    max-width: 780px;
+  }
+
+  .slide-body {
+    padding: 28px 36px 32px;
+    display: grid;
+    gap: 28px;
+  }
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .chart-wrap {
+    background: #1e2029;
+    border: 1px solid #2a2d3a;
+    border-radius: 8px;
+    padding: 20px 20px 16px;
+  }
+  .chart-wrap.full { grid-column: 1 / -1; }
+  .chart-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #6b7280;
+    margin-bottom: 14px;
+  }
+  .chart-wrap canvas { display: block; }
+
+  .callout-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .callout {
+    background: #1e2029;
+    border: 1px solid #2a2d3a;
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .callout .number {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .callout .number.green  { color: #34d399; }
+  .callout .number.amber  { color: #fbbf24; }
+  .callout .number.red    { color: #f87171; }
+  .callout .number.blue   { color: #60a5fa; }
+  .callout .clabel {
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.4;
+  }
+
+  .footnote {
+    font-size: 10px;
+    color: #4b5563;
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  .slide-number {
+    font-size: 11px;
+    color: #374151;
+    text-align: right;
+    padding: 10px 36px 14px;
+    border-top: 1px solid #1e2029;
+  }
+</style>
+</head>
+<body>
+
+<div class="deck-header">
+  <div class="company">Meridian Technologies — Confidential</div>
+  <h1>Workforce Health · Board Briefing</h1>
+  <div class="meta">April 21, 2026 &nbsp;·&nbsp; 36-month panel analysis (Apr 2023 – Mar 2026) &nbsp;·&nbsp; n = 2,500 employees</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 1 — DOUBLE DOWN: REFERRAL HIRING
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label label-green">① Double Down</div>
+    <div class="slide-title">Referral hiring is the strongest retention lever we already have</div>
+    <div class="slide-subtitle">Referral hires churn at 19% vs 26.5% for direct hires — and the gap doubles in the first six months. With direct hires comprising 48% of headcount, even a modest shift in sourcing mix has outsized impact on stability and replacement cost.</div>
+  </div>
+
+  <div class="slide-body">
+    <div class="callout-row">
+      <div class="callout">
+        <div class="number green">19.1%</div>
+        <div class="clabel">Referral attrition rate<br><em>vs 26.5% direct hire</em></div>
+      </div>
+      <div class="callout">
+        <div class="number amber">51.9%</div>
+        <div class="clabel">Direct hires lost within 6 months<br><em>vs 24.2% for referrals</em></div>
+      </div>
+      <div class="callout">
+        <div class="number blue">24%</div>
+        <div class="clabel">Current referral share of headcount<br><em>opportunity to grow</em></div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-wrap">
+        <div class="chart-label">Overall attrition rate by hire source</div>
+        <canvas id="c1a" height="220"></canvas>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-label">Early attrition rate (first 6 months) by hire source</div>
+        <canvas id="c1b" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">1 / 3</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 2 — FIX: PROMOTION PIPELINE
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label label-amber">② Fix</div>
+    <div class="slide-title">High performers are not advancing — and they are starting to leave</div>
+    <div class="slide-subtitle">79% of employees rated "Often Exceeds" or "Consistently Exceeds" were never promoted over three years. Attrition rises again at the top rating band, confirming these employees are exercising their external options. The promotion pipeline is broken, not the talent.</div>
+  </div>
+
+  <div class="slide-body">
+    <div class="callout-row">
+      <div class="callout">
+        <div class="number red">79%</div>
+        <div class="clabel">High performers (rating 4/5)<br>never promoted (772 of 976)</div>
+      </div>
+      <div class="callout">
+        <div class="number red">94.7%</div>
+        <div class="clabel">Customer Success high performers<br>never promoted (36 of 38)</div>
+      </div>
+      <div class="callout">
+        <div class="number amber">13%</div>
+        <div class="clabel">Attrition rate for rating-5 employees<br><em>higher than rating-4 at 11%</em></div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-wrap">
+        <div class="chart-label">% of high performers (rating 4+5) never promoted, by function</div>
+        <canvas id="c2a" height="260"></canvas>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-label">Attrition rate by performance rating (rated employees only)</div>
+        <canvas id="c2b" height="260"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">2 / 3</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 3 — WATCH: ENGINEERING TEAMS
+     ══════════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label label-blue">③ Watch</div>
+    <div class="slide-title">Two Engineering teams: the departures are visible; the next wave is not</div>
+    <div class="slide-subtitle">Two Staff-level Engineering managers lost 26 of 47 direct reports (55% attrition). The more urgent signal is among the 21 who remain — their engagement score of 5.35 sits nearly 2 points below the company average, indicating a second wave of departures is forming.</div>
+  </div>
+
+  <div class="slide-body">
+    <div class="callout-row">
+      <div class="callout">
+        <div class="number red">55%</div>
+        <div class="clabel">Attrition across both flagged teams<br><em>vs 23.6% company average</em></div>
+      </div>
+      <div class="callout">
+        <div class="number red">5.35</div>
+        <div class="clabel">Avg engagement — surviving employees<br><em>vs 7.07 company average</em></div>
+      </div>
+      <div class="callout">
+        <div class="number amber">5 mo</div>
+        <div class="clabel">Tenure of replacement manager<br><em>inherited a disengaged team</em></div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-wrap">
+        <div class="chart-label">Attrition rate: flagged teams vs company</div>
+        <canvas id="c3a" height="220"></canvas>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-label">Key health metrics: flagged teams vs company average</div>
+        <canvas id="c3b" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">3 / 3</div>
+</div>
+
+<div style="text-align:center; font-size:11px; color:#374151; max-width:1100px; margin:0 auto; padding-bottom:40px;">
+  Meridian Technologies — Workforce Health Briefing · April 2026 · Confidential · Synthetic data for illustrative purposes
+</div>
+
+<script>
+const GRID_COLOR = 'rgba(255,255,255,0.06)';
+const TICK_COLOR = '#6b7280';
+const FONT = "'Segoe UI', -apple-system, sans-serif";
+
+Chart.defaults.font.family = FONT;
+Chart.defaults.color = TICK_COLOR;
+
+function hBar(id, labels, data, colors, xMax, suffix='%') {
+  new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{ data, backgroundColor: colors, borderRadius: 4, borderSkipped: false }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: { label: ctx => ` ${ctx.parsed.x.toFixed(1)}${suffix}` }
+        }
+      },
+      scales: {
+        x: {
+          max: xMax,
+          grid: { color: GRID_COLOR },
+          ticks: { callback: v => v + suffix, font: { size: 11 } },
+          border: { display: false }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { size: 12 } },
+          border: { display: false }
+        }
+      }
+    }
+  });
+}
+
+function vBar(id, labels, datasets, yMax, suffix='%') {
+  new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: datasets.length > 1,
+          labels: { boxWidth: 12, font: { size: 11 }, color: '#9ca3af' }
+        },
+        tooltip: {
+          callbacks: { label: ctx => ` ${ctx.dataset.label || ''}: ${ctx.parsed.y.toFixed(1)}${suffix}` }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 11 } },
+          border: { display: false }
+        },
+        y: {
+          max: yMax,
+          grid: { color: GRID_COLOR },
+          ticks: { callback: v => v + suffix, font: { size: 11 } },
+          border: { display: false }
+        }
+      }
+    }
+  });
+}
+
+// ── SLIDE 1 ──
+// c1a: Overall attrition by hire source
+hBar('c1a',
+  ['Referral', 'Acquired', 'Campus', 'Agency', 'Direct'],
+  [19.1, 20.5, 21.7, 24.2, 26.5],
+  ['#34d399','#34d399','#fbbf24','#fbbf24','#f87171'],
+  35
+);
+
+// c1b: Early attrition by hire source
+hBar('c1b',
+  ['Referral', 'Acquired', 'Campus', 'Agency', 'Direct'],
+  [24.2, 25.0, 33.3, 44.4, 51.9],
+  ['#34d399','#34d399','#fbbf24','#fbbf24','#f87171'],
+  65
+);
+
+// ── SLIDE 2 ──
+// c2a: % high performers never promoted by function (horizontal bar)
+const fn_labels = ['Operations','Finance','Engineering','Sales','People','Data','Legal','Marketing','Design','Product','Cust. Success'];
+const fn_noprom = [73.1, 75.0, 76.0, 77.1, 80.0, 81.5, 83.3, 84.6, 85.9, 85.9, 94.7];
+const fn_colors = fn_noprom.map(v => v >= 85 ? '#f87171' : v >= 78 ? '#fbbf24' : '#6b7280');
+hBar('c2a', fn_labels, fn_noprom, fn_colors, 100);
+
+// c2b: Attrition by performance rating — grouped with annotation line
+new Chart(document.getElementById('c2b'), {
+  type: 'bar',
+  data: {
+    labels: ['1 — Does Not Meet', '2 — Sometimes Meets', '3 — Meets', '4 — Often Exceeds', '5 — Consistently Exceeds'],
+    datasets: [{
+      label: 'Attrition rate',
+      data: [42.1, 32.8, 18.0, 11.0, 13.0],
+      backgroundColor: ['#f87171','#fb923c','#fbbf24','#34d399','#fbbf24'],
+      borderRadius: 4,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y.toFixed(1)}%` } },
+      annotation: {}
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 10 }, maxRotation: 20 },
+        border: { display: false }
+      },
+      y: {
+        max: 55,
+        grid: { color: GRID_COLOR },
+        ticks: { callback: v => v + '%', font: { size: 11 } },
+        border: { display: false }
+      }
+    }
+  }
+});
+
+// ── SLIDE 3 ──
+// c3a: Attrition — Team A, Team B, Company
+vBar('c3a',
+  ['Team A\n(departed mgr)', 'Team B\n(new mgr)', 'Company\nAverage'],
+  [{
+    label: 'Attrition rate',
+    data: [56.0, 54.5, 23.6],
+    backgroundColor: ['#f87171','#fb923c','#6b7280'],
+    borderRadius: 4,
+    borderSkipped: false
+  }],
+  75
+);
+
+// c3b: Radar-style grouped bar — Engagement, Perf, Mgr Effectiveness
+new Chart(document.getElementById('c3b'), {
+  type: 'bar',
+  data: {
+    labels: ['Engagement\n(out of 10)', 'Avg Perf\nRating (out of 5)', 'Mgr Effectiveness\n(out of 10)'],
+    datasets: [
+      {
+        label: 'Team A (departed mgr)',
+        data: [5.31, 2.95, 5.38],
+        backgroundColor: '#f87171',
+        borderRadius: 3,
+        borderSkipped: false
+      },
+      {
+        label: 'Team B (new mgr)',
+        data: [5.39, 3.05, 5.85],
+        backgroundColor: '#fb923c',
+        borderRadius: 3,
+        borderSkipped: false
+      },
+      {
+        label: 'Company Average',
+        data: [7.07, 3.31, 7.03],
+        backgroundColor: '#60a5fa',
+        borderRadius: 3,
+        borderSkipped: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true,
+        labels: { boxWidth: 12, font: { size: 11 }, color: '#9ca3af' }
+      },
+      tooltip: {
+        callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}` }
+      }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 10 } },
+        border: { display: false }
+      },
+      y: {
+        max: 10,
+        grid: { color: GRID_COLOR },
+        ticks: { font: { size: 11 } },
+        border: { display: false }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
